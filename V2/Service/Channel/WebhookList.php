@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\Channel;
+namespace Twilio\Rest\IpMessaging\V2\Service\Channel;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\ListResource;
@@ -165,6 +165,6 @@ class WebhookList extends ListResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.WebhookList]';
+        return '[Twilio.IpMessaging.V2.WebhookList]';
     }
 }

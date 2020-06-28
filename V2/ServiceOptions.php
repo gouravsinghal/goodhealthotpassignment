@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2;
+namespace Twilio\Rest\IpMessaging\V2;
 
 use Twilio\Options;
 use Twilio\Values;
@@ -618,6 +618,6 @@ class UpdateServiceOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.UpdateServiceOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.UpdateServiceOptions ' . $options . ']';
     }
 }

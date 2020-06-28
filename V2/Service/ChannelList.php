@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\ListResource;
@@ -163,6 +163,6 @@ class ChannelList extends ListResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.ChannelList]';
+        return '[Twilio.IpMessaging.V2.ChannelList]';
     }
 }

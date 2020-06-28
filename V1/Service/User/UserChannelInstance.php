@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service\User;
+namespace Twilio\Rest\IpMessaging\V1\Service\User;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceResource;
@@ -78,6 +78,6 @@ class UserChannelInstance extends InstanceResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V1.UserChannelInstance]';
+        return '[Twilio.IpMessaging.V1.UserChannelInstance]';
     }
 }

@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2;
+namespace Twilio\Rest\IpMessaging\V2;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\ListResource;
@@ -138,6 +138,6 @@ class ServiceList extends ListResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.ServiceList]';
+        return '[Twilio.IpMessaging.V2.ServiceList]';
     }
 }

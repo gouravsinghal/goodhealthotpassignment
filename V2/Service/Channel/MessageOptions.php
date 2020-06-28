@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\Channel;
+namespace Twilio\Rest\IpMessaging\V2\Service\Channel;
 
 use Twilio\Options;
 use Twilio\Values;
@@ -197,7 +197,7 @@ class CreateMessageOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.CreateMessageOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.CreateMessageOptions ' . $options . ']';
     }
 }
 
@@ -227,7 +227,7 @@ class ReadMessageOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.ReadMessageOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.ReadMessageOptions ' . $options . ']';
     }
 }
 
@@ -259,7 +259,7 @@ class DeleteMessageOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.DeleteMessageOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.DeleteMessageOptions ' . $options . ']';
     }
 }
 
@@ -377,6 +377,6 @@ class UpdateMessageOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.UpdateMessageOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.UpdateMessageOptions ' . $options . ']';
     }
 }

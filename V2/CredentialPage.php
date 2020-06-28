@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2;
+namespace Twilio\Rest\IpMessaging\V2;
 
 use Twilio\Http\Response;
 use Twilio\Page;
@@ -28,7 +28,7 @@ class CredentialPage extends Page {
 
     /**
      * @param array $payload Payload response from the API
-     * @return CredentialInstance \Twilio\Rest\Chat\V2\CredentialInstance
+     * @return CredentialInstance \Twilio\Rest\IpMessaging\V2\CredentialInstance
      */
     public function buildInstance(array $payload): CredentialInstance {
         return new CredentialInstance($this->version, $payload);
@@ -40,6 +40,6 @@ class CredentialPage extends Page {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.CredentialPage]';
+        return '[Twilio.IpMessaging.V2.CredentialPage]';
     }
 }

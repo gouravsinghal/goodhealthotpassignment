@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\Channel;
+namespace Twilio\Rest\IpMessaging\V2\Service\Channel;
 
 use Twilio\Http\Response;
 use Twilio\Page;
@@ -28,7 +28,7 @@ class InvitePage extends Page {
 
     /**
      * @param array $payload Payload response from the API
-     * @return InviteInstance \Twilio\Rest\Chat\V2\Service\Channel\InviteInstance
+     * @return InviteInstance \Twilio\Rest\IpMessaging\V2\Service\Channel\InviteInstance
      */
     public function buildInstance(array $payload): InviteInstance {
         return new InviteInstance(
@@ -45,6 +45,6 @@ class InvitePage extends Page {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.InvitePage]';
+        return '[Twilio.IpMessaging.V2.InvitePage]';
     }
 }

@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\Channel;
+namespace Twilio\Rest\IpMessaging\V2\Service\Channel;
 
 use Twilio\Options;
 use Twilio\Values;
@@ -155,7 +155,7 @@ class CreateWebhookOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.CreateWebhookOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.CreateWebhookOptions ' . $options . ']';
     }
 }
 
@@ -262,6 +262,6 @@ class UpdateWebhookOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.UpdateWebhookOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.UpdateWebhookOptions ' . $options . ']';
     }
 }

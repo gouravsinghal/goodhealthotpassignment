@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Http\Response;
 use Twilio\Page;
@@ -28,7 +28,7 @@ class BindingPage extends Page {
 
     /**
      * @param array $payload Payload response from the API
-     * @return BindingInstance \Twilio\Rest\Chat\V2\Service\BindingInstance
+     * @return BindingInstance \Twilio\Rest\IpMessaging\V2\Service\BindingInstance
      */
     public function buildInstance(array $payload): BindingInstance {
         return new BindingInstance($this->version, $payload, $this->solution['serviceSid']);
@@ -40,6 +40,6 @@ class BindingPage extends Page {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.BindingPage]';
+        return '[Twilio.IpMessaging.V2.BindingPage]';
     }
 }

@@ -7,15 +7,15 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1;
+namespace Twilio\Rest\IpMessaging\V1;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
 use Twilio\ListResource;
 use Twilio\Options;
-use Twilio\Rest\Chat\V1\Service\ChannelList;
-use Twilio\Rest\Chat\V1\Service\RoleList;
-use Twilio\Rest\Chat\V1\Service\UserList;
+use Twilio\Rest\IpMessaging\V1\Service\ChannelList;
+use Twilio\Rest\IpMessaging\V1\Service\RoleList;
+use Twilio\Rest\IpMessaging\V1\Service\UserList;
 use Twilio\Serialize;
 use Twilio\Values;
 use Twilio\Version;
@@ -24,9 +24,9 @@ use Twilio\Version;
  * @property ChannelList $channels
  * @property RoleList $roles
  * @property UserList $users
- * @method \Twilio\Rest\Chat\V1\Service\ChannelContext channels(string $sid)
- * @method \Twilio\Rest\Chat\V1\Service\RoleContext roles(string $sid)
- * @method \Twilio\Rest\Chat\V1\Service\UserContext users(string $sid)
+ * @method \Twilio\Rest\IpMessaging\V1\Service\ChannelContext channels(string $sid)
+ * @method \Twilio\Rest\IpMessaging\V1\Service\RoleContext roles(string $sid)
+ * @method \Twilio\Rest\IpMessaging\V1\Service\UserContext users(string $sid)
  */
 class ServiceContext extends InstanceContext {
     protected $_channels;
@@ -218,6 +218,6 @@ class ServiceContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V1.ServiceContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V1.ServiceContext ' . \implode(' ', $context) . ']';
     }
 }

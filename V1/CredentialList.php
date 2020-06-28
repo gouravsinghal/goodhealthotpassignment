@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1;
+namespace Twilio\Rest\IpMessaging\V1;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\ListResource;
@@ -152,6 +152,6 @@ class CredentialList extends ListResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V1.CredentialList]';
+        return '[Twilio.IpMessaging.V1.CredentialList]';
     }
 }

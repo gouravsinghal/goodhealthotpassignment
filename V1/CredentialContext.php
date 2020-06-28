@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1;
+namespace Twilio\Rest\IpMessaging\V1;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
@@ -88,6 +88,6 @@ class CredentialContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V1.CredentialContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V1.CredentialContext ' . \implode(' ', $context) . ']';
     }
 }

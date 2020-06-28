@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Http\Response;
 use Twilio\Page;
@@ -28,7 +28,7 @@ class RolePage extends Page {
 
     /**
      * @param array $payload Payload response from the API
-     * @return RoleInstance \Twilio\Rest\Chat\V2\Service\RoleInstance
+     * @return RoleInstance \Twilio\Rest\IpMessaging\V2\Service\RoleInstance
      */
     public function buildInstance(array $payload): RoleInstance {
         return new RoleInstance($this->version, $payload, $this->solution['serviceSid']);
@@ -40,6 +40,6 @@ class RolePage extends Page {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.RolePage]';
+        return '[Twilio.IpMessaging.V2.RolePage]';
     }
 }

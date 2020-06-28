@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\User;
+namespace Twilio\Rest\IpMessaging\V2\Service\User;
 
 use Twilio\Http\Response;
 use Twilio\Page;
@@ -28,7 +28,7 @@ class UserChannelPage extends Page {
 
     /**
      * @param array $payload Payload response from the API
-     * @return UserChannelInstance \Twilio\Rest\Chat\V2\Service\User\UserChannelInstance
+     * @return UserChannelInstance \Twilio\Rest\IpMessaging\V2\Service\User\UserChannelInstance
      */
     public function buildInstance(array $payload): UserChannelInstance {
         return new UserChannelInstance(
@@ -45,6 +45,6 @@ class UserChannelPage extends Page {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.UserChannelPage]';
+        return '[Twilio.IpMessaging.V2.UserChannelPage]';
     }
 }

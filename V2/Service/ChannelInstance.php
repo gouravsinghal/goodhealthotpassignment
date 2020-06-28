@@ -7,16 +7,16 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Deserialize;
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceResource;
 use Twilio\Options;
-use Twilio\Rest\Chat\V2\Service\Channel\InviteList;
-use Twilio\Rest\Chat\V2\Service\Channel\MemberList;
-use Twilio\Rest\Chat\V2\Service\Channel\MessageList;
-use Twilio\Rest\Chat\V2\Service\Channel\WebhookList;
+use Twilio\Rest\IpMessaging\V2\Service\Channel\InviteList;
+use Twilio\Rest\IpMessaging\V2\Service\Channel\MemberList;
+use Twilio\Rest\IpMessaging\V2\Service\Channel\MessageList;
+use Twilio\Rest\IpMessaging\V2\Service\Channel\WebhookList;
 use Twilio\Values;
 use Twilio\Version;
 
@@ -183,6 +183,6 @@ class ChannelInstance extends InstanceResource {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V2.ChannelInstance ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V2.ChannelInstance ' . \implode(' ', $context) . ']';
     }
 }

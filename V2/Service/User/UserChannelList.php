@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\User;
+namespace Twilio\Rest\IpMessaging\V2\Service\User;
 
 use Twilio\ListResource;
 use Twilio\Stream;
@@ -131,6 +131,6 @@ class UserChannelList extends ListResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.UserChannelList]';
+        return '[Twilio.IpMessaging.V2.UserChannelList]';
     }
 }

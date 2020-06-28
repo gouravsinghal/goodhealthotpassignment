@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Options;
 use Twilio\Values;
@@ -65,6 +65,6 @@ class ReadBindingOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.ReadBindingOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.ReadBindingOptions ' . $options . ']';
     }
 }

@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service;
+namespace Twilio\Rest\IpMessaging\V1\Service;
 
 use Twilio\Options;
 use Twilio\Values;
@@ -90,7 +90,7 @@ class CreateUserOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V1.CreateUserOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V1.CreateUserOptions ' . $options . ']';
     }
 }
 
@@ -148,6 +148,6 @@ class UpdateUserOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V1.UpdateUserOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V1.UpdateUserOptions ' . $options . ']';
     }
 }

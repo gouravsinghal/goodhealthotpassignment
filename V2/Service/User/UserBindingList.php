@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\User;
+namespace Twilio\Rest\IpMessaging\V2\Service\User;
 
 use Twilio\ListResource;
 use Twilio\Options;
@@ -142,6 +142,6 @@ class UserBindingList extends ListResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V2.UserBindingList]';
+        return '[Twilio.IpMessaging.V2.UserBindingList]';
     }
 }

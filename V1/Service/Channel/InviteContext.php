@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service\Channel;
+namespace Twilio\Rest\IpMessaging\V1\Service\Channel;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
@@ -71,6 +71,6 @@ class InviteContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V1.InviteContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V1.InviteContext ' . \implode(' ', $context) . ']';
     }
 }

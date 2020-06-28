@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2;
+namespace Twilio\Rest\IpMessaging\V2;
 
 use Twilio\Options;
 use Twilio\Values;
@@ -161,7 +161,7 @@ class CreateCredentialOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.CreateCredentialOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.CreateCredentialOptions ' . $options . ']';
     }
 }
 
@@ -274,6 +274,6 @@ class UpdateCredentialOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V2.UpdateCredentialOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V2.UpdateCredentialOptions ' . $options . ']';
     }
 }

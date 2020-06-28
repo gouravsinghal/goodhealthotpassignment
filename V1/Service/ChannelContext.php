@@ -7,15 +7,15 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service;
+namespace Twilio\Rest\IpMessaging\V1\Service;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
 use Twilio\ListResource;
 use Twilio\Options;
-use Twilio\Rest\Chat\V1\Service\Channel\InviteList;
-use Twilio\Rest\Chat\V1\Service\Channel\MemberList;
-use Twilio\Rest\Chat\V1\Service\Channel\MessageList;
+use Twilio\Rest\IpMessaging\V1\Service\Channel\InviteList;
+use Twilio\Rest\IpMessaging\V1\Service\Channel\MemberList;
+use Twilio\Rest\IpMessaging\V1\Service\Channel\MessageList;
 use Twilio\Values;
 use Twilio\Version;
 
@@ -23,9 +23,9 @@ use Twilio\Version;
  * @property MemberList $members
  * @property MessageList $messages
  * @property InviteList $invites
- * @method \Twilio\Rest\Chat\V1\Service\Channel\MemberContext members(string $sid)
- * @method \Twilio\Rest\Chat\V1\Service\Channel\MessageContext messages(string $sid)
- * @method \Twilio\Rest\Chat\V1\Service\Channel\InviteContext invites(string $sid)
+ * @method \Twilio\Rest\IpMessaging\V1\Service\Channel\MemberContext members(string $sid)
+ * @method \Twilio\Rest\IpMessaging\V1\Service\Channel\MessageContext messages(string $sid)
+ * @method \Twilio\Rest\IpMessaging\V1\Service\Channel\InviteContext invites(string $sid)
  */
 class ChannelContext extends InstanceContext {
     protected $_members;
@@ -189,6 +189,6 @@ class ChannelContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V1.ChannelContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V1.ChannelContext ' . \implode(' ', $context) . ']';
     }
 }

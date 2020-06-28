@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
@@ -68,6 +68,6 @@ class BindingContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V2.BindingContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V2.BindingContext ' . \implode(' ', $context) . ']';
     }
 }

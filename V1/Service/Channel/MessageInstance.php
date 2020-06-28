@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service\Channel;
+namespace Twilio\Rest\IpMessaging\V1\Service\Channel;
 
 use Twilio\Deserialize;
 use Twilio\Exceptions\TwilioException;
@@ -150,6 +150,6 @@ class MessageInstance extends InstanceResource {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V1.MessageInstance ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V1.MessageInstance ' . \implode(' ', $context) . ']';
     }
 }

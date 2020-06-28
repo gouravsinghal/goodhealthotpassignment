@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service\Channel;
+namespace Twilio\Rest\IpMessaging\V1\Service\Channel;
 
 use Twilio\Options;
 use Twilio\Values;
@@ -56,7 +56,7 @@ class CreateInviteOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V1.CreateInviteOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V1.CreateInviteOptions ' . $options . ']';
     }
 }
 
@@ -86,6 +86,6 @@ class ReadInviteOptions extends Options {
      */
     public function __toString(): string {
         $options = \http_build_query(Values::of($this->options), '', ' ');
-        return '[Twilio.Chat.V1.ReadInviteOptions ' . $options . ']';
+        return '[Twilio.IpMessaging.V1.ReadInviteOptions ' . $options . ']';
     }
 }

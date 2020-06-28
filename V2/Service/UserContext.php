@@ -7,22 +7,22 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
 use Twilio\ListResource;
 use Twilio\Options;
-use Twilio\Rest\Chat\V2\Service\User\UserBindingList;
-use Twilio\Rest\Chat\V2\Service\User\UserChannelList;
+use Twilio\Rest\IpMessaging\V2\Service\User\UserBindingList;
+use Twilio\Rest\IpMessaging\V2\Service\User\UserChannelList;
 use Twilio\Values;
 use Twilio\Version;
 
 /**
  * @property UserChannelList $userChannels
  * @property UserBindingList $userBindings
- * @method \Twilio\Rest\Chat\V2\Service\User\UserChannelContext userChannels(string $channelSid)
- * @method \Twilio\Rest\Chat\V2\Service\User\UserBindingContext userBindings(string $sid)
+ * @method \Twilio\Rest\IpMessaging\V2\Service\User\UserChannelContext userChannels(string $channelSid)
+ * @method \Twilio\Rest\IpMessaging\V2\Service\User\UserBindingContext userBindings(string $sid)
  */
 class UserContext extends InstanceContext {
     protected $_userChannels;
@@ -171,6 +171,6 @@ class UserContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V2.UserContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V2.UserContext ' . \implode(' ', $context) . ']';
     }
 }

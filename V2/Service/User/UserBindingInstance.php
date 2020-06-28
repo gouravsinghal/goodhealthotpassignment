@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\User;
+namespace Twilio\Rest\IpMessaging\V2\Service\User;
 
 use Twilio\Deserialize;
 use Twilio\Exceptions\TwilioException;
@@ -135,6 +135,6 @@ class UserBindingInstance extends InstanceResource {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V2.UserBindingInstance ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V2.UserBindingInstance ' . \implode(' ', $context) . ']';
     }
 }

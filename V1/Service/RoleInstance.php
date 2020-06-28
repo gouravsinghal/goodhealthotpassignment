@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service;
+namespace Twilio\Rest\IpMessaging\V1\Service;
 
 use Twilio\Deserialize;
 use Twilio\Exceptions\TwilioException;
@@ -134,6 +134,6 @@ class RoleInstance extends InstanceResource {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V1.RoleInstance ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V1.RoleInstance ' . \implode(' ', $context) . ']';
     }
 }

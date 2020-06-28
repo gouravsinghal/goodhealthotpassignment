@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service;
+namespace Twilio\Rest\IpMessaging\V2\Service;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
@@ -89,6 +89,6 @@ class RoleContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V2.RoleContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V2.RoleContext ' . \implode(' ', $context) . ']';
     }
 }

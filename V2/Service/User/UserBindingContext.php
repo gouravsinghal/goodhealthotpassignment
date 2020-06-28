@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V2\Service\User;
+namespace Twilio\Rest\IpMessaging\V2\Service\User;
 
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
@@ -70,6 +70,6 @@ class UserBindingContext extends InstanceContext {
         foreach ($this->solution as $key => $value) {
             $context[] = "$key=$value";
         }
-        return '[Twilio.Chat.V2.UserBindingContext ' . \implode(' ', $context) . ']';
+        return '[Twilio.IpMessaging.V2.UserBindingContext ' . \implode(' ', $context) . ']';
     }
 }

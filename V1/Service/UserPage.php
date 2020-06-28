@@ -7,7 +7,7 @@
  * /       /
  */
 
-namespace Twilio\Rest\Chat\V1\Service;
+namespace Twilio\Rest\IpMessaging\V1\Service;
 
 use Twilio\Http\Response;
 use Twilio\Page;
@@ -28,7 +28,7 @@ class UserPage extends Page {
 
     /**
      * @param array $payload Payload response from the API
-     * @return UserInstance \Twilio\Rest\Chat\V1\Service\UserInstance
+     * @return UserInstance \Twilio\Rest\IpMessaging\V1\Service\UserInstance
      */
     public function buildInstance(array $payload): UserInstance {
         return new UserInstance($this->version, $payload, $this->solution['serviceSid']);
@@ -40,6 +40,6 @@ class UserPage extends Page {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Chat.V1.UserPage]';
+        return '[Twilio.IpMessaging.V1.UserPage]';
     }
 }
