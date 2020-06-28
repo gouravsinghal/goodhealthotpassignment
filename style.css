@@ -1,0 +1,49 @@
+*{
+	/*margin: 0px;*/
+	/*box-sizing: border-box;*/
+}
+body{
+	background-color: #61122f;
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Oxygen', sans-serif;
+}
+
+/*** Large devices only ***/
+@media (min-width: 1200px) {
+	.col-lg-4{
+		width: 32.33333%;
+	}
+}
+
+/*** Medium devices only ***/
+@media (min-width: 767px) and (max-width: 1199px) {
+	
+	 a:hover{
+	 	color: white;
+	}
+}
+
+
+
+
+/*** Small devices only ***/
+@media (max-width: 767px) {
+	h1{
+		margin-left: 25px;
+		display: inline-block;
+		margin-top: 10px;
+	}
+	
+	 a:hover{
+	 	color: white;
+	}
+	
+
+} /*end media query*/
+.row-content {
+    margin:0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
