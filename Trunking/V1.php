@@ -7,23 +7,23 @@
  * /       /
  */
 
-namespace Twilio\Rest\Taskrouter;
+namespace Twilio\Rest\Trunking;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
 use Twilio\InstanceContext;
-use Twilio\Rest\Taskrouter\V1\WorkspaceList;
+use Twilio\Rest\Trunking\V1\TrunkList;
 use Twilio\Version;
 
 /**
- * @property WorkspaceList $workspaces
- * @method \Twilio\Rest\Taskrouter\V1\WorkspaceContext workspaces(string $sid)
+ * @property TrunkList $trunks
+ * @method \Twilio\Rest\Trunking\V1\TrunkContext trunks(string $sid)
  */
 class V1 extends Version {
-    protected $_workspaces;
+    protected $_trunks;
 
     /**
-     * Construct the V1 version of Taskrouter
+     * Construct the V1 version of Trunking
      *
      * @param Domain $domain Domain that contains the version
      */
@@ -32,11 +32,11 @@ class V1 extends Version {
         $this->version = 'v1';
     }
 
-    protected function getWorkspaces(): WorkspaceList {
-        if (!$this->_workspaces) {
-            $this->_workspaces = new WorkspaceList($this);
+    protected function getTrunks(): TrunkList {
+        if (!$this->_trunks) {
+            $this->_trunks = new TrunkList($this);
         }
-        return $this->_workspaces;
+        return $this->_trunks;
     }
 
     /**
@@ -78,6 +78,6 @@ class V1 extends Version {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Taskrouter.V1]';
+        return '[Twilio.Trunking.V1]';
     }
 }
