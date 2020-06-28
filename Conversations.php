@@ -11,29 +11,31 @@ namespace Twilio\Rest;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
-use Twilio\Rest\Sync\V1;
+use Twilio\Rest\Conversations\V1;
 
 /**
- * @property \Twilio\Rest\Sync\V1 $v1
- * @property \Twilio\Rest\Sync\V1\ServiceList $services
- * @method \Twilio\Rest\Sync\V1\ServiceContext services(string $sid)
+ * @property \Twilio\Rest\Conversations\V1 $v1
+ * @property \Twilio\Rest\Conversations\V1\ConversationList $conversations
+ * @property \Twilio\Rest\Conversations\V1\WebhookList $webhooks
+ * @method \Twilio\Rest\Conversations\V1\ConversationContext conversations(string $sid)
+ * @method \Twilio\Rest\Conversations\V1\WebhookContext webhooks()
  */
-class Sync extends Domain {
+class Conversations extends Domain {
     protected $_v1;
 
     /**
-     * Construct the Sync Domain
+     * Construct the Conversations Domain
      *
      * @param Client $client Client to communicate with Twilio
      */
     public function __construct(Client $client) {
         parent::__construct($client);
 
-        $this->baseUrl = 'https://sync.twilio.com';
+        $this->baseUrl = 'https://conversations.twilio.com';
     }
 
     /**
-     * @return V1 Version v1 of sync
+     * @return V1 Version v1 of conversations
      */
     protected function getV1(): V1 {
         if (!$this->_v1) {
@@ -75,15 +77,24 @@ class Sync extends Domain {
         throw new TwilioException('Unknown context ' . $name);
     }
 
-    protected function getServices(): \Twilio\Rest\Sync\V1\ServiceList {
-        return $this->v1->services;
+    protected function getConversations(): \Twilio\Rest\Conversations\V1\ConversationList {
+        return $this->v1->conversations;
     }
 
     /**
-     * @param string $sid The SID of the Service resource to fetch
+     * @param string $sid A 34 character string that uniquely identifies this
+     *                    resource.
      */
-    protected function contextServices(string $sid): \Twilio\Rest\Sync\V1\ServiceContext {
-        return $this->v1->services($sid);
+    protected function contextConversations(string $sid): \Twilio\Rest\Conversations\V1\ConversationContext {
+        return $this->v1->conversations($sid);
+    }
+
+    protected function getWebhooks(): \Twilio\Rest\Conversations\V1\WebhookList {
+        return $this->v1->webhooks;
+    }
+
+    protected function contextWebhooks(): \Twilio\Rest\Conversations\V1\WebhookContext {
+        return $this->v1->webhooks();
     }
 
     /**
@@ -92,6 +103,6 @@ class Sync extends Domain {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Sync]';
+        return '[Twilio.Conversations]';
     }
 }

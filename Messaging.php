@@ -11,34 +11,29 @@ namespace Twilio\Rest;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
-use Twilio\Rest\Wireless\V1;
+use Twilio\Rest\Messaging\V1;
 
 /**
- * @property \Twilio\Rest\Wireless\V1 $v1
- * @property \Twilio\Rest\Wireless\V1\UsageRecordList $usageRecords
- * @property \Twilio\Rest\Wireless\V1\CommandList $commands
- * @property \Twilio\Rest\Wireless\V1\RatePlanList $ratePlans
- * @property \Twilio\Rest\Wireless\V1\SimList $sims
- * @method \Twilio\Rest\Wireless\V1\CommandContext commands(string $sid)
- * @method \Twilio\Rest\Wireless\V1\RatePlanContext ratePlans(string $sid)
- * @method \Twilio\Rest\Wireless\V1\SimContext sims(string $sid)
+ * @property \Twilio\Rest\Messaging\V1 $v1
+ * @property \Twilio\Rest\Messaging\V1\ServiceList $services
+ * @method \Twilio\Rest\Messaging\V1\ServiceContext services(string $sid)
  */
-class Wireless extends Domain {
+class Messaging extends Domain {
     protected $_v1;
 
     /**
-     * Construct the Wireless Domain
+     * Construct the Messaging Domain
      *
      * @param Client $client Client to communicate with Twilio
      */
     public function __construct(Client $client) {
         parent::__construct($client);
 
-        $this->baseUrl = 'https://wireless.twilio.com';
+        $this->baseUrl = 'https://messaging.twilio.com';
     }
 
     /**
-     * @return V1 Version v1 of wireless
+     * @return V1 Version v1 of messaging
      */
     protected function getV1(): V1 {
         if (!$this->_v1) {
@@ -80,41 +75,15 @@ class Wireless extends Domain {
         throw new TwilioException('Unknown context ' . $name);
     }
 
-    protected function getUsageRecords(): \Twilio\Rest\Wireless\V1\UsageRecordList {
-        return $this->v1->usageRecords;
-    }
-
-    protected function getCommands(): \Twilio\Rest\Wireless\V1\CommandList {
-        return $this->v1->commands;
+    protected function getServices(): \Twilio\Rest\Messaging\V1\ServiceList {
+        return $this->v1->services;
     }
 
     /**
      * @param string $sid The SID that identifies the resource to fetch
      */
-    protected function contextCommands(string $sid): \Twilio\Rest\Wireless\V1\CommandContext {
-        return $this->v1->commands($sid);
-    }
-
-    protected function getRatePlans(): \Twilio\Rest\Wireless\V1\RatePlanList {
-        return $this->v1->ratePlans;
-    }
-
-    /**
-     * @param string $sid The SID that identifies the resource to fetch
-     */
-    protected function contextRatePlans(string $sid): \Twilio\Rest\Wireless\V1\RatePlanContext {
-        return $this->v1->ratePlans($sid);
-    }
-
-    protected function getSims(): \Twilio\Rest\Wireless\V1\SimList {
-        return $this->v1->sims;
-    }
-
-    /**
-     * @param string $sid The SID of the Sim resource to fetch
-     */
-    protected function contextSims(string $sid): \Twilio\Rest\Wireless\V1\SimContext {
-        return $this->v1->sims($sid);
+    protected function contextServices(string $sid): \Twilio\Rest\Messaging\V1\ServiceContext {
+        return $this->v1->services($sid);
     }
 
     /**
@@ -123,6 +92,6 @@ class Wireless extends Domain {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Wireless]';
+        return '[Twilio.Messaging]';
     }
 }

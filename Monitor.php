@@ -11,34 +11,31 @@ namespace Twilio\Rest;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
-use Twilio\Rest\Wireless\V1;
+use Twilio\Rest\Monitor\V1;
 
 /**
- * @property \Twilio\Rest\Wireless\V1 $v1
- * @property \Twilio\Rest\Wireless\V1\UsageRecordList $usageRecords
- * @property \Twilio\Rest\Wireless\V1\CommandList $commands
- * @property \Twilio\Rest\Wireless\V1\RatePlanList $ratePlans
- * @property \Twilio\Rest\Wireless\V1\SimList $sims
- * @method \Twilio\Rest\Wireless\V1\CommandContext commands(string $sid)
- * @method \Twilio\Rest\Wireless\V1\RatePlanContext ratePlans(string $sid)
- * @method \Twilio\Rest\Wireless\V1\SimContext sims(string $sid)
+ * @property \Twilio\Rest\Monitor\V1 $v1
+ * @property \Twilio\Rest\Monitor\V1\AlertList $alerts
+ * @property \Twilio\Rest\Monitor\V1\EventList $events
+ * @method \Twilio\Rest\Monitor\V1\AlertContext alerts(string $sid)
+ * @method \Twilio\Rest\Monitor\V1\EventContext events(string $sid)
  */
-class Wireless extends Domain {
+class Monitor extends Domain {
     protected $_v1;
 
     /**
-     * Construct the Wireless Domain
+     * Construct the Monitor Domain
      *
      * @param Client $client Client to communicate with Twilio
      */
     public function __construct(Client $client) {
         parent::__construct($client);
 
-        $this->baseUrl = 'https://wireless.twilio.com';
+        $this->baseUrl = 'https://monitor.twilio.com';
     }
 
     /**
-     * @return V1 Version v1 of wireless
+     * @return V1 Version v1 of monitor
      */
     protected function getV1(): V1 {
         if (!$this->_v1) {
@@ -80,41 +77,26 @@ class Wireless extends Domain {
         throw new TwilioException('Unknown context ' . $name);
     }
 
-    protected function getUsageRecords(): \Twilio\Rest\Wireless\V1\UsageRecordList {
-        return $this->v1->usageRecords;
-    }
-
-    protected function getCommands(): \Twilio\Rest\Wireless\V1\CommandList {
-        return $this->v1->commands;
+    protected function getAlerts(): \Twilio\Rest\Monitor\V1\AlertList {
+        return $this->v1->alerts;
     }
 
     /**
      * @param string $sid The SID that identifies the resource to fetch
      */
-    protected function contextCommands(string $sid): \Twilio\Rest\Wireless\V1\CommandContext {
-        return $this->v1->commands($sid);
+    protected function contextAlerts(string $sid): \Twilio\Rest\Monitor\V1\AlertContext {
+        return $this->v1->alerts($sid);
     }
 
-    protected function getRatePlans(): \Twilio\Rest\Wireless\V1\RatePlanList {
-        return $this->v1->ratePlans;
+    protected function getEvents(): \Twilio\Rest\Monitor\V1\EventList {
+        return $this->v1->events;
     }
 
     /**
      * @param string $sid The SID that identifies the resource to fetch
      */
-    protected function contextRatePlans(string $sid): \Twilio\Rest\Wireless\V1\RatePlanContext {
-        return $this->v1->ratePlans($sid);
-    }
-
-    protected function getSims(): \Twilio\Rest\Wireless\V1\SimList {
-        return $this->v1->sims;
-    }
-
-    /**
-     * @param string $sid The SID of the Sim resource to fetch
-     */
-    protected function contextSims(string $sid): \Twilio\Rest\Wireless\V1\SimContext {
-        return $this->v1->sims($sid);
+    protected function contextEvents(string $sid): \Twilio\Rest\Monitor\V1\EventContext {
+        return $this->v1->events($sid);
     }
 
     /**
@@ -123,6 +105,6 @@ class Wireless extends Domain {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Wireless]';
+        return '[Twilio.Monitor]';
     }
 }

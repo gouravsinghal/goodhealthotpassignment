@@ -11,35 +11,34 @@ namespace Twilio\Rest;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
-use Twilio\Rest\Sync\V1;
+use Twilio\Rest\Numbers\V2;
 
 /**
- * @property \Twilio\Rest\Sync\V1 $v1
- * @property \Twilio\Rest\Sync\V1\ServiceList $services
- * @method \Twilio\Rest\Sync\V1\ServiceContext services(string $sid)
+ * @property \Twilio\Rest\Numbers\V2 $v2
+ * @property \Twilio\Rest\Numbers\V2\RegulatoryComplianceList $regulatoryCompliance
  */
-class Sync extends Domain {
-    protected $_v1;
+class Numbers extends Domain {
+    protected $_v2;
 
     /**
-     * Construct the Sync Domain
+     * Construct the Numbers Domain
      *
      * @param Client $client Client to communicate with Twilio
      */
     public function __construct(Client $client) {
         parent::__construct($client);
 
-        $this->baseUrl = 'https://sync.twilio.com';
+        $this->baseUrl = 'https://numbers.twilio.com';
     }
 
     /**
-     * @return V1 Version v1 of sync
+     * @return V2 Version v2 of numbers
      */
-    protected function getV1(): V1 {
-        if (!$this->_v1) {
-            $this->_v1 = new V1($this);
+    protected function getV2(): V2 {
+        if (!$this->_v2) {
+            $this->_v2 = new V2($this);
         }
-        return $this->_v1;
+        return $this->_v2;
     }
 
     /**
@@ -75,15 +74,8 @@ class Sync extends Domain {
         throw new TwilioException('Unknown context ' . $name);
     }
 
-    protected function getServices(): \Twilio\Rest\Sync\V1\ServiceList {
-        return $this->v1->services;
-    }
-
-    /**
-     * @param string $sid The SID of the Service resource to fetch
-     */
-    protected function contextServices(string $sid): \Twilio\Rest\Sync\V1\ServiceContext {
-        return $this->v1->services($sid);
+    protected function getRegulatoryCompliance(): \Twilio\Rest\Numbers\V2\RegulatoryComplianceList {
+        return $this->v2->regulatoryCompliance;
     }
 
     /**
@@ -92,6 +84,6 @@ class Sync extends Domain {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Sync]';
+        return '[Twilio.Numbers]';
     }
 }

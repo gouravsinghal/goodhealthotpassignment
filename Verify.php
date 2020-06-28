@@ -11,35 +11,37 @@ namespace Twilio\Rest;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
-use Twilio\Rest\Sync\V1;
+use Twilio\Rest\Verify\V2;
 
 /**
- * @property \Twilio\Rest\Sync\V1 $v1
- * @property \Twilio\Rest\Sync\V1\ServiceList $services
- * @method \Twilio\Rest\Sync\V1\ServiceContext services(string $sid)
+ * @property \Twilio\Rest\Verify\V2 $v2
+ * @property \Twilio\Rest\Verify\V2\FormList $forms
+ * @property \Twilio\Rest\Verify\V2\ServiceList $services
+ * @method \Twilio\Rest\Verify\V2\FormContext forms(string $formType)
+ * @method \Twilio\Rest\Verify\V2\ServiceContext services(string $sid)
  */
-class Sync extends Domain {
-    protected $_v1;
+class Verify extends Domain {
+    protected $_v2;
 
     /**
-     * Construct the Sync Domain
+     * Construct the Verify Domain
      *
      * @param Client $client Client to communicate with Twilio
      */
     public function __construct(Client $client) {
         parent::__construct($client);
 
-        $this->baseUrl = 'https://sync.twilio.com';
+        $this->baseUrl = 'https://verify.twilio.com';
     }
 
     /**
-     * @return V1 Version v1 of sync
+     * @return V2 Version v2 of verify
      */
-    protected function getV1(): V1 {
-        if (!$this->_v1) {
-            $this->_v1 = new V1($this);
+    protected function getV2(): V2 {
+        if (!$this->_v2) {
+            $this->_v2 = new V2($this);
         }
-        return $this->_v1;
+        return $this->_v2;
     }
 
     /**
@@ -75,15 +77,26 @@ class Sync extends Domain {
         throw new TwilioException('Unknown context ' . $name);
     }
 
-    protected function getServices(): \Twilio\Rest\Sync\V1\ServiceList {
-        return $this->v1->services;
+    protected function getForms(): \Twilio\Rest\Verify\V2\FormList {
+        return $this->v2->forms;
     }
 
     /**
-     * @param string $sid The SID of the Service resource to fetch
+     * @param string $formType The Type of this Form
      */
-    protected function contextServices(string $sid): \Twilio\Rest\Sync\V1\ServiceContext {
-        return $this->v1->services($sid);
+    protected function contextForms(string $formType): \Twilio\Rest\Verify\V2\FormContext {
+        return $this->v2->forms($formType);
+    }
+
+    protected function getServices(): \Twilio\Rest\Verify\V2\ServiceList {
+        return $this->v2->services;
+    }
+
+    /**
+     * @param string $sid The unique string that identifies the resource
+     */
+    protected function contextServices(string $sid): \Twilio\Rest\Verify\V2\ServiceContext {
+        return $this->v2->services($sid);
     }
 
     /**
@@ -92,6 +105,6 @@ class Sync extends Domain {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Sync]';
+        return '[Twilio.Verify]';
     }
 }

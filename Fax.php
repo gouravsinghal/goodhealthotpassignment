@@ -11,29 +11,29 @@ namespace Twilio\Rest;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
-use Twilio\Rest\Sync\V1;
+use Twilio\Rest\Fax\V1;
 
 /**
- * @property \Twilio\Rest\Sync\V1 $v1
- * @property \Twilio\Rest\Sync\V1\ServiceList $services
- * @method \Twilio\Rest\Sync\V1\ServiceContext services(string $sid)
+ * @property \Twilio\Rest\Fax\V1 $v1
+ * @property \Twilio\Rest\Fax\V1\FaxList $faxes
+ * @method \Twilio\Rest\Fax\V1\FaxContext faxes(string $sid)
  */
-class Sync extends Domain {
+class Fax extends Domain {
     protected $_v1;
 
     /**
-     * Construct the Sync Domain
+     * Construct the Fax Domain
      *
      * @param Client $client Client to communicate with Twilio
      */
     public function __construct(Client $client) {
         parent::__construct($client);
 
-        $this->baseUrl = 'https://sync.twilio.com';
+        $this->baseUrl = 'https://fax.twilio.com';
     }
 
     /**
-     * @return V1 Version v1 of sync
+     * @return V1 Version v1 of fax
      */
     protected function getV1(): V1 {
         if (!$this->_v1) {
@@ -75,15 +75,15 @@ class Sync extends Domain {
         throw new TwilioException('Unknown context ' . $name);
     }
 
-    protected function getServices(): \Twilio\Rest\Sync\V1\ServiceList {
-        return $this->v1->services;
+    protected function getFaxes(): \Twilio\Rest\Fax\V1\FaxList {
+        return $this->v1->faxes;
     }
 
     /**
-     * @param string $sid The SID of the Service resource to fetch
+     * @param string $sid The unique string that identifies the resource
      */
-    protected function contextServices(string $sid): \Twilio\Rest\Sync\V1\ServiceContext {
-        return $this->v1->services($sid);
+    protected function contextFaxes(string $sid): \Twilio\Rest\Fax\V1\FaxContext {
+        return $this->v1->faxes($sid);
     }
 
     /**
@@ -92,6 +92,6 @@ class Sync extends Domain {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Sync]';
+        return '[Twilio.Fax]';
     }
 }

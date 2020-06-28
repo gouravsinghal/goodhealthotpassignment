@@ -11,29 +11,29 @@ namespace Twilio\Rest;
 
 use Twilio\Domain;
 use Twilio\Exceptions\TwilioException;
-use Twilio\Rest\Sync\V1;
+use Twilio\Rest\Taskrouter\V1;
 
 /**
- * @property \Twilio\Rest\Sync\V1 $v1
- * @property \Twilio\Rest\Sync\V1\ServiceList $services
- * @method \Twilio\Rest\Sync\V1\ServiceContext services(string $sid)
+ * @property \Twilio\Rest\Taskrouter\V1 $v1
+ * @property \Twilio\Rest\Taskrouter\V1\WorkspaceList $workspaces
+ * @method \Twilio\Rest\Taskrouter\V1\WorkspaceContext workspaces(string $sid)
  */
-class Sync extends Domain {
+class Taskrouter extends Domain {
     protected $_v1;
 
     /**
-     * Construct the Sync Domain
+     * Construct the Taskrouter Domain
      *
      * @param Client $client Client to communicate with Twilio
      */
     public function __construct(Client $client) {
         parent::__construct($client);
 
-        $this->baseUrl = 'https://sync.twilio.com';
+        $this->baseUrl = 'https://taskrouter.twilio.com';
     }
 
     /**
-     * @return V1 Version v1 of sync
+     * @return V1 Version v1 of taskrouter
      */
     protected function getV1(): V1 {
         if (!$this->_v1) {
@@ -75,15 +75,15 @@ class Sync extends Domain {
         throw new TwilioException('Unknown context ' . $name);
     }
 
-    protected function getServices(): \Twilio\Rest\Sync\V1\ServiceList {
-        return $this->v1->services;
+    protected function getWorkspaces(): \Twilio\Rest\Taskrouter\V1\WorkspaceList {
+        return $this->v1->workspaces;
     }
 
     /**
-     * @param string $sid The SID of the Service resource to fetch
+     * @param string $sid The SID of the resource to fetch
      */
-    protected function contextServices(string $sid): \Twilio\Rest\Sync\V1\ServiceContext {
-        return $this->v1->services($sid);
+    protected function contextWorkspaces(string $sid): \Twilio\Rest\Taskrouter\V1\WorkspaceContext {
+        return $this->v1->workspaces($sid);
     }
 
     /**
@@ -92,6 +92,6 @@ class Sync extends Domain {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Sync]';
+        return '[Twilio.Taskrouter]';
     }
 }
